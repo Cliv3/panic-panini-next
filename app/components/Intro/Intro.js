@@ -53,7 +53,7 @@ export default function Intro() {
 						<button 
 							onClick={togglePlay}
 							className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 
-								   bg-yellow-btn-primary hover:bg-yellow-500 text-white
+								   bg-blue-400 hover:bg-blue-500 text-white
 								   rounded-full w-16 h-16 flex items-center justify-center
 								   transition-all duration-300"
 						>

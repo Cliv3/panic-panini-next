@@ -13,7 +13,7 @@ export default function BandIdentity() {
 				<Container customClasses="px-2.5 flex items-center justify-between font-sm">
 					<Image className="max-w-[6rem] h-auto " src="/money.png" width={324} height={236} alt="$WORK TOKEN IMAGE" />
 					<ScrollTo toId="shows" duration={1500}>
-						<ButtonPrimary customClasses="text-sm">Live gigs</ButtonPrimary>
+						<ButtonPrimary customClasses="text-sm">ROADMAP</ButtonPrimary>
 					</ScrollTo>
 				</Container>
 			</div>

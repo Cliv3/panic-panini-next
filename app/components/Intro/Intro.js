@@ -18,6 +18,7 @@ export default function Intro() {
 	const [isScrollTopVisible, setIsScrollTopVisible] = useState(false);
 	const sectionRef = useRef(null);
 	const isInView = useInView(sectionRef);
+	const [isPlaying, setIsPlaying] = useState(false);
 
 	useEffect(() => {
 		const { scrollY } = window;
@@ -28,6 +29,16 @@ export default function Intro() {
 		}
 	}, [isInView]);
 
+	const togglePlay = () => {
+		const video = document.querySelector('#backgroundVideo');
+		if (isPlaying) {
+			video.pause();
+		} else {
+			video.play();
+		}
+		setIsPlaying(!isPlaying);
+	};
+
 	return (
 		<section
 			id="intro"
@@ -37,11 +48,31 @@ export default function Intro() {
 			<div className="absolute w-full h-full top-0 left-0">
 				<div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-purple-500 to-pink-500 opacity-10"></div>
 				<div className="absolute w-full h-full top-0 left-0 bg-hero-pattern bg-repeat"></div>
+				{!isPlaying && (
+					<>
+						<button 
+							onClick={togglePlay}
+							className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 
+								   bg-yellow-btn-primary hover:bg-yellow-500 text-white
+								   rounded-full w-16 h-16 flex items-center justify-center
+								   transition-all duration-300"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+							</svg>
+						</button>
+						<p className=" absolute top-[60%] left-1/2 transform -translate-x-1/2 text-white 
+								 text-center font-bold z-20 bg-black/30 px-4 py-2 rounded-lg">
+							If You Are Ready To $WORK For Your Bags, Press Play!
+						</p>
+					</>
+				)}
 				<video
-					autoPlay
-					
+					id="backgroundVideo"
+					autoPlay={false}
 					loop
-					poster="/frame-band.jpg"
+					
+					poster="/workvid.png"
 					className="object-cover w-full h-full z-10"
 					playsInline>
 					<source src="./small.webm" type="video/webm" />
@@ -52,9 +83,11 @@ export default function Intro() {
 					</p>
 				</video>
 			</div>
-			<Container customClasses="flex flex-col justify-center items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:justify-end lg:items-end">
-				<IntroTourDates />
-			</Container>
+			{isPlaying && (
+				<Container customClasses="flex flex-col justify-center items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:justify-end lg:items-end">
+					<IntroTourDates />
+				</Container>
+			)}
 			<NewAlbum customClasses="mt-auto z-50 lg:hidden" />
 			<BackToTop customClasses={`reveal${isScrollTopVisible ? " visible" : ""}`} />
 			<CookieConsent

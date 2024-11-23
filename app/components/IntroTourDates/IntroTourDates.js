@@ -60,18 +60,20 @@ export default function IntroTourDates() {
 			<h2 className="text-white font-permanentMarker text-2xl md:text-3xl lg:text-4xl">
 				⚡ $WORK FOR YOUR FUTURE. ⚡
 			</h2>
-			<div className="flex flex-col items-center gap-x-3">
+			<div className="flex flex-col items-center gap-y-4">
 				<a href="https://github.com/stefanogali/panic-panini-next" target="_blank" rel="noreferrer">
 					<ButtonPrimary customClasses="flex items-center gap-x-1 text-sm my-3 lg:text-base lg:mb-0">
 						<Github extraClasses="w-3 h-auto fill-white lg:w-5" />
 						Buy on Dex screeener
 					</ButtonPrimary>
 				</a>
-				<div className="flex items-center justify-between bg-blue-400/50 backdrop-blur-sm px-6 py-3 rounded-lg gap-4 w-full sm:w-auto">
-					<p className="text-white">CA: {contractAddress.slice(0, 24)}...</p>
+				<div className="flex flex-col sm:flex-row items-center justify-center w-full px-4 sm:px-3 gap-2 sm:gap-4">
+					<p className="text-white text-sm sm:text-base">
+						Contract Address: {contractAddress.slice(0, 8)}...{contractAddress.slice(-8)}
+					</p>
 					<button
 						onClick={handleCopy}
-						className="bg-blue-500/50 hover:bg-blue-500 text-white px-4 py-2 rounded-md transition-all duration-300"
+						className="bg-yellow-btn-primary hover:bg-yellow-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md transition-all duration-300 text-sm sm:text-base w-24"
 					>
 						{copied ? 'Copied!' : 'Copy'}
 					</button>

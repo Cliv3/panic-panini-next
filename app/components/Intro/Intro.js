@@ -39,13 +39,13 @@ export default function Intro() {
 				<div className="absolute w-full h-full top-0 left-0 bg-hero-pattern bg-repeat"></div>
 				<video
 					autoPlay
-					muted
+					
 					loop
 					poster="/frame-band.jpg"
 					className="object-cover w-full h-full z-10"
 					playsInline>
-					<source src="./video-band.webm" type="video/webm" />
-					<source src="./video-band.mp4" type="video/mp4" />
+					<source src="./small.webm" type="video/webm" />
+					<source src="./small.mp4" type="video/mp4" />
 					<p>
 						Your browser doesn&#8217;t support HTML video. Here is a
 						<a href="./video-band.mp4">link to the video</a> instead.

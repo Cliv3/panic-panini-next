@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import ScrollTo from "@/app/global-components/ScrollTo/ScrollTo";
@@ -12,32 +12,42 @@ const observerOptions = {
 };
 
 const tourDates = [
-	{
-		id: 1,
-		date: "19 Oct",
-		dayTime: "Friday 20.30 - 23.00",
-		venue: "The O2, Isla Square",
-		city: "London",
-	},
-	{
-		id: 2,
-		date: "22 Nov",
-		dayTime: "Wednesday 20.00 - 22.00",
-		venue: "Roundhouse, Chalk Bag Rd",
-		city: "Rome",
-	},
-	{
-		id: 3,
-		date: "10 Dec",
-		dayTime: "Saturday 20.00 - 22.00",
-		venue: "200 Camden High St",
-		city: "New York",
-	},
+	// {
+	// 	id: 1,
+	// 	date: "1",
+	// 	dayTime: "Community For",
+	// 	venue: "Hustlers",
+	// 	city: "",
+	// },
+	// {
+	// 	id: 2,
+	// 	date: "22 Nov",
+	// 	dayTime: "Wednesday 20.00 - 22.00",
+	// 	venue: "Roundhouse, Chalk Bag Rd",
+	// 	city: "Rome",
+	// },
+	// {
+	// 	id: 3,
+	// 	date: "10 Dec",
+	// 	dayTime: "Saturday 20.00 - 22.00",
+	// 	venue: "200 Camden High St",
+	// 	city: "New York",
+	// },
 ];
 
 export default function IntroTourDates() {
 	const sectionRef = useRef(null);
 	const isInView = useInView(sectionRef, { once: true });
+	const contractAddress = 'FMWRBWhr49k3JtPBhYT5mGXayvXJkpsuTaodzjTRpump';
+	const [copied, setCopied] = useState(false);
+  	const [activeSection, setActiveSection] = useState(0);
+
+	const handleCopy = () => {
+		navigator.clipboard.writeText(contractAddress);
+		setCopied(true);
+		setTimeout(() => setCopied(false), 2000);
+	  };
+
 	return (
 		<div
 			className={`flex flex-col justify-center items-center lg:justify-end lg:items-end`}
@@ -48,8 +58,26 @@ export default function IntroTourDates() {
 			}}
 			ref={sectionRef}>
 			<h2 className="text-white font-permanentMarker text-2xl md:text-3xl lg:text-4xl">
-				⚡ Free Template ⚡
+				⚡ $WORK FOR YOUR FUTURE. ⚡
 			</h2>
+			<div className="flex flex-col items-center gap-x-3">
+				<a href="https://github.com/stefanogali/panic-panini-next" target="_blank" rel="noreferrer">
+					<ButtonPrimary customClasses="flex items-center gap-x-1 text-sm my-3 lg:text-base lg:mb-0">
+						<Github extraClasses="w-3 h-auto fill-white lg:w-5" />
+						Buy on Dex screeener
+					</ButtonPrimary>
+				</a>
+				<div className="flex items-center justify-between bg-blue-400/50 backdrop-blur-sm px-6 py-3 rounded-lg gap-4 w-full sm:w-auto">
+					<p className="text-white">CA: {contractAddress.slice(0, 24)}...</p>
+					<button
+						onClick={handleCopy}
+						className="bg-blue-500/50 hover:bg-blue-500 text-white px-4 py-2 rounded-md transition-all duration-300"
+					>
+						{copied ? 'Copied!' : 'Copy'}
+					</button>
+				</div>
+			</div>
+
 			<ul className="list-none">
 				{tourDates.map((gig) => {
 					return (
@@ -77,19 +105,6 @@ export default function IntroTourDates() {
 					);
 				})}
 			</ul>
-			<div className="gap-x-3 lg:flex">
-				<a href="https://github.com/stefanogali/panic-panini-next" target="_blank" rel="noreferrer">
-					<ButtonPrimary customClasses="flex items-center gap-x-1 text-sm my-3 lg:text-base lg:mb-0">
-						<Github extraClasses="w-3 h-auto fill-white lg:w-5" />
-						Github Repo
-					</ButtonPrimary>
-				</a>
-				<div className="hidden lg:block">
-					<ScrollTo toId="shows" duration={1500}>
-						<ButtonPrimary>Find out more</ButtonPrimary>
-					</ScrollTo>
-				</div>
-			</div>
 		</div>
 	);
 }

@@ -3,41 +3,38 @@
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import Container from "@/app/global-components/Container/Container";
-import { Spotify, SoundCloud, Youtube, AppleMusic } from "@/app/svg-icons/svg-icons";
-import AudioPlayer from "@/app/global-components/AudioPlayer/AudioPlayer";
 
 export default function Listen() {
-	const textRef = useRef(null);
-	const isInView = useInView(textRef, { once: true });
+  const textRef = useRef(null);
+  const isInView = useInView(textRef, { once: true });
 
-	return (
-		<section id="listen" className={`w-full mt-16 lg:mt-56`}>
-			<Container customClasses="flex flex-col lg:flex-row">
-				<div
-					className="flex flex-col justify-center basis-2/4 lg:max-w-lg xl:max-w-2xl 2xl:max-w-4xl"
-					ref={textRef}
-					style={{
-						transform: isInView ? "none" : "translateX(-100px)",
-						opacity: isInView ? 1 : 0,
-						transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-					}}>
-					<p>Listen to the new album:</p>
-					<h2 className="font-bold text-6xl pb-6">Panic in the room</h2>
-					<p>
-						Dovrebbero seguire le mie voglie, la sera appena alzato, o tardi la mattina dopo la
-						colazione, prima d&#8217;addormentarmi.
-					</p>
-					<div className="flex items-center pt-4 gap-4">
-						<Spotify />
-						<SoundCloud />
-						<Youtube />
-						<AppleMusic />
-					</div>
-				</div>
-				<div className="flex items-center justify-center pt-5 basis-2/4 mt-20 lg:mt-0 lg:justify-end lg:pt-[60px]">
-					<AudioPlayer />
-				</div>
-			</Container>
-		</section>
-	);
+  return (
+    <section id="listen" className="w-full py-8 lg:py-16">
+      <Container customClasses="h-full">
+        <div
+          ref={textRef}
+          className="flex flex-col w-full"
+          style={{
+            transform: isInView ? "none" : "translateX(-100px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
+          <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl mb-8 mt-20 px-4">
+            FIND US ON DEXSCREENER
+          </h2>
+          
+          <div className="w-full h-[calc(100vh-12rem)] min-h-[400px] max-h-[800px] px-4 md:px-8 lg:px-12">
+            <div className="w-full h-full rounded-lg overflow-hidden shadow-2xl bg-black">
+              <iframe
+                className="w-full h-full border-0"
+                src="https://dexscreener.com/solana/9ng9PmgS2LaQjou7SpuzYi21qUMmWCGrnMYmmBEj8wBZ?embed=1&loadChartSettings=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=0&chartType=usd&interval=15"
+                title="DEXScreener Chart"
+              />
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
 }

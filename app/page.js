@@ -13,7 +13,7 @@ export default function Home() {
 				<About />
 				<Listen />
 				<Shows />
-				<ContactUs />
+				{/* <ContactUs /> */}
 				<TextParallax />
 				<PhotoGallery />
 			</main>

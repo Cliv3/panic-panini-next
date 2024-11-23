@@ -90,7 +90,7 @@ export default function Intro() {
 			)}
 			<NewAlbum customClasses="mt-auto z-50 lg:hidden" />
 			<BackToTop customClasses={`reveal${isScrollTopVisible ? " visible" : ""}`} />
-			<CookieConsent
+			{/* <CookieConsent
 				disableStyles={true}
 				buttonText="Consent"
 				cookieName="cookie_consent"
@@ -99,7 +99,7 @@ export default function Intro() {
 				contentClasses="text-sm leading-none mb-1 lg:text-white"
 				expires={20}>
 				This website uses cookies to enhance the user experience.
-			</CookieConsent>
+			</CookieConsent> */}
 		</section>
 	);
 }

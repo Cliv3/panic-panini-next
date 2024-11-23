@@ -17,7 +17,7 @@ export default function NewAlbum({ customClasses }) {
 			}}>
 			<h4 className="text-white font-permanentMarker text-xl">WHILE OTHERS ARE</h4>
 			<h4 className="text-white font-rockSalt text-xl">Trying to Get Rich Quick,</h4>
-			<p className="text-blue-400 text-base">$WORK FOR YOUR BAGS, $WORK FOR YOUR FUTURE.</p>
+			<p className="text-fluo-green text-base">$WORK FOR YOUR BAGS, $WORK FOR YOUR FUTURE.</p>
 		</div>
 	);
 }

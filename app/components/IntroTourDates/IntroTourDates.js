@@ -61,9 +61,8 @@ export default function IntroTourDates() {
 				⚡ $WORK FOR YOUR FUTURE. ⚡
 			</h2>
 			<div className="flex flex-col items-center gap-y-4">
-				<a href="https://github.com/stefanogali/panic-panini-next" target="_blank" rel="noreferrer">
+				<a href="https://dexscreener.com/solana/9ng9pmgs2laqjou7spuzyi21qummwcgrnmymmbej8wbz" target="_blank" rel="noreferrer">
 					<ButtonPrimary customClasses="flex items-center gap-x-1 text-sm my-3 lg:text-base lg:mb-0">
-						<Github extraClasses="w-3 h-auto fill-white lg:w-5" />
 						Buy on Dex screeener
 					</ButtonPrimary>
 				</a>
@@ -73,7 +72,7 @@ export default function IntroTourDates() {
 					</p>
 					<button
 						onClick={handleCopy}
-						className="bg-yellow-btn-primary hover:bg-yellow-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md transition-all duration-300 text-sm sm:text-base w-24"
+						className="bg-blue-400 hover:bg-yellow-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md transition-all duration-300 text-sm sm:text-base w-24"
 					>
 						{copied ? 'Copied!' : 'Copy'}
 					</button>

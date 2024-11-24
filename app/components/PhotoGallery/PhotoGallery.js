@@ -107,7 +107,7 @@ export default function PhotoGallery() {
     >
       <Container>
         <h2 className="font-bold text-6xl pb-6">Gallery</h2>
-        <p>Past shows.</p>
+        <p>$WORK</p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
           {galleryThumbnails.map((item, index) => {
             return (

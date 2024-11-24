@@ -46,6 +46,10 @@ export default function Shows() {
 			id="shows"
 			className={`w-full relative mt-8 bg-incoming-shows bg-cover bg-no-repeat bg-center h-[38rem] lg:h-screen lg:min-h-[45rem] lg:max-h-[54rem] lg:mt-13`}
 			style={{
+				backgroundImage: "url('/workharder2.jpg')",
+				backgroundSize: "cover",
+				backgroundRepeat: "no-repeat",
+				backgroundPosition: "center",			
 				transform: isInView ? "none" : "translateY(100px)",
 				opacity: isInView ? 1 : 0,
 				transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",

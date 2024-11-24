@@ -91,10 +91,10 @@ export default function Intro() {
         >
           <source src="./small.webm" type="video/webm" />
           <source src="./small.mp4" type="video/mp4" />
-          <p>
+          {/* <p>
             Your browser doesn&#8217;t support HTML video. Here is a
             <a href="./video-band.mp4">link to the video</a> instead.
-          </p>
+          </p> */}
         </video>
       </div>
       {isPlaying && (

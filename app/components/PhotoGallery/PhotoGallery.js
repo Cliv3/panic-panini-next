@@ -12,9 +12,6 @@ const galleryThumbnails = [
   {
     id: 1,
     src: "/gallery/work/1.webp",
-    club: "The Golden Eagle.",
-    city: "Miami",
-    date: "12/2/2021",
     slides: [
       { src: "/gallery/work/1.webp" },
       // { src: "/gallery/slider-images/slider-2.jpg" },
@@ -24,9 +21,6 @@ const galleryThumbnails = [
   {
     id: 2,
     src: "/gallery/work/2.webp",
-    club: "The Silver Elephant.",
-    city: "Atlanta",
-    date: "23/6/2019",
     slides: [
       { src: "/gallery/work/2.webp" },
       // { src: "/gallery/slider-images/slider-5.jpg" },
@@ -36,9 +30,6 @@ const galleryThumbnails = [
   {
     id: 3,
     src: "/gallery/work/4.webp",
-    club: "The Electric Fox.",
-    city: "Los Angeles",
-    date: "11/3/2019",
     slides: [
       { src: "/gallery/work/4.webp" },
       // { src: "/gallery/slider-images/slider-8.jpg" },
@@ -48,9 +39,6 @@ const galleryThumbnails = [
   {
     id: 4,
     src: "/gallery/work/3.png",
-    club: "The Cool Mouse.",
-    city: "New York",
-    date: "03/12/2018",
     slides: [
       { src: "/gallery/work/3.png" },
       // { src: "/gallery/slider-images/slider-11.jpg" },
@@ -59,24 +47,63 @@ const galleryThumbnails = [
   },
   {
     id: 5,
-    src: "/gallery/work/5.gif",
-    club: "The Super Cat.",
-    city: "Rome",
-    date: "03/03/2018",
+    src: "/gallery/work/9.jpg",
     slides: [
-      { src: "/gallery/work/5.gif" },
+      { src: "/gallery/work/9.jpg" },
       // { src: "/gallery/slider-images/slider-14.jpg" },
       // { src: "/gallery/slider-images/slider-15.jpg" },
     ],
   },
   {
     id: 6,
-    src: "/gallery/work/6.jpeg",
-    club: "The Brave Salmon.",
-    city: "Berlin",
-    date: "25/12/2017",
+    src: "/gallery/work/11.jpg",
     slides: [
-      { src: "/gallery/work/6.jpeg" },
+      { src: "/gallery/work/11.jpg" },
+      // { src: "/gallery/slider-images/slider-17.jpg" },
+      // { src: "/gallery/slider-images/slider-18.jpg" },
+    ],
+  },
+  {
+    id: 7,
+    src: "/gallery/work/10.jpg",
+    slides: [
+      { src: "/gallery/work/10.jpg" },
+      // { src: "/gallery/slider-images/slider-17.jpg" },
+      // { src: "/gallery/slider-images/slider-18.jpg" },
+    ],
+  },
+  {
+    id: 8,
+    src: "/gallery/work/8.jpg",
+    slides: [
+      { src: "/gallery/work/8.jpg" },
+      // { src: "/gallery/slider-images/slider-17.jpg" },
+      // { src: "/gallery/slider-images/slider-18.jpg" },
+    ],
+  },
+  {
+    id: 9,
+    src: "/gallery/work/5.gif",
+    slides: [
+      { src: "/gallery/work/5.gif" },
+      // { src: "/gallery/slider-images/slider-17.jpg" },
+      // { src: "/gallery/slider-images/slider-18.jpg" },
+    ],
+  },
+  {
+    id: 10,
+    src: "/gallery/work/6.jpeg",
+    slides: [
+      { src: "/gallery/work/10.jpeg" },
+      // { src: "/gallery/slider-images/slider-17.jpg" },
+      // { src: "/gallery/slider-images/slider-18.jpg" },
+    ],
+  },
+  {
+    id: 11,
+    src: "/gallery/work/7.jpg",
+    slides: [
+      { src: "/gallery/work/7.jpg" },
       // { src: "/gallery/slider-images/slider-17.jpg" },
       // { src: "/gallery/slider-images/slider-18.jpg" },
     ],
@@ -117,7 +144,7 @@ export default function PhotoGallery() {
                     src={item.src}
                     width={400}
                     height={400}
-                    alt="Gallery gig thumbnail"
+                    alt="Gallery thumbnail"
                     onClick={() => clickHandler(index)}
                   />
                 </div>

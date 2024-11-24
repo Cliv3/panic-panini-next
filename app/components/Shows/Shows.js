@@ -44,7 +44,7 @@ export default function Shows() {
 	return (
 		<section
 			id="shows"
-			className={`w-full relative mt-16 bg-incoming-shows bg-cover bg-no-repeat bg-center h-[32rem] lg:h-screen lg:min-h-[45rem] lg:max-h-[49rem] lg:mt-56`}
+			className={`w-full relative mt-8 bg-incoming-shows bg-cover bg-no-repeat bg-center h-[38rem] lg:h-screen lg:min-h-[45rem] lg:max-h-[54rem] lg:mt-13`}
 			style={{
 				transform: isInView ? "none" : "translateY(100px)",
 				opacity: isInView ? 1 : 0,
@@ -53,8 +53,7 @@ export default function Shows() {
 			ref={showsContainerRef}>
 			<Container customClasses="pb-2.5 h-full">
 				<div className="flex flex-col items-center text-white pt-11">
-					<h2 className="text-2xl font-bold lg:text-4xl">Incoming Shows &#127928;</h2>
-					<h4 className="text-base lg:text-2xl">We playin{`’`} in your town!</h4>
+					<h2 className="text-2xl font-bold lg:text-4xl">Roadmap &#127928;</h2>
 				</div>
 				<div
 					className="scoller relative mt-6 h-[calc(100%-14rem)] overflow-hidden overflow-y-auto no-scrollbar"

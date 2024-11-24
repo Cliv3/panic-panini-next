@@ -1,139 +1,72 @@
 import ButtonPrimary from "@/app/global-components/ButtonPrimary/ButtonPrimary";
 
-const tourDates = [
+const roadmapPhases = [
 	{
-		id: 1,
-		date: "19 Oct",
-		day: "Friday",
-		time: "20.30 - 23.00",
-		venue: "The O2, Isla Square",
-		city: "London",
+	  id: 1,
+	  phase: "Phase 1/3",
+	  title: "Laying the Foundation",
+	  items: [
+		"Community Takeover: take over the $WORK movement with a fresh, dynamic vision.",
+		"Assemble the Core Team: includes developers and short-form video editors to lead technical and creative efforts.",
+		" Launch official pages on Instagram and TikTok, bringing the hustle culture online.",
+		"Build a network of grinders and hustlers, with the goal of securing the first 1,000 holders.",
+		"Introduce our AI-powered motivator on Twitter, providing daily inspiration and trading/productivity tips."
+	  ]
 	},
 	{
-		id: 2,
-		date: "22 Nov",
-		day: "Wednesday",
-		time: "20.00 - 22.00",
-		venue: "Roundhouse, Chalk Bag Rd",
-		city: "London",
+	  id: 2,
+	  phase: "Phase 2/3",
+	  title: "Scaling the Hustle",
+	  items: [
+		"Marketing Blitz: Launch a strategic campaign targeting everyday go-getters on TikTok and Instagram.",
+		"Influencer Partnerships: Onboard relatable TikTok/IG influencers to amplify our message.",
+		"Community Content Power: Decentralize resources (templates, guides, video assets) to enable community members to create and share $WORK-related content effortlessly.",
+		"Stay Connected: Host regular community calls to foster collaboration, Network, Learn and keep the grind alive.",
+		"Website 2.0: Revamp the website to reflect $WORK's growing identity, with enhanced resources and sleek design."
+	  ]
 	},
 	{
-		id: 3,
-		date: "10 Dec",
-		day: "Saturday",
-		time: "20.00 - 22.00",
-		venue: "200 Camden High St",
-		city: "London",
-	},
-	{
-		id: 4,
-		date: "03 Jan",
-		day: "Friday",
-		time: "19.30 - 22.30",
-		venue: "The Music Room, 49 Elephant St",
-		city: "London",
-	},
-	{
-		id: 5,
-		date: "04 Jan",
-		day: "Saturday",
-		time: "21.30 - 23.30",
-		venue: "The Cool Mouse, 49 Little Mouse St",
-		city: "New York",
-	},
-	{
-		id: 6,
-		date: "12 Feb",
-		day: "Monday",
-		time: "21.30 - 23.30",
-		venue: "The Electric Fox, 389 Fox Road",
-		city: "Los Angeles",
-	},
-	{
-		id: 7,
-		date: "18 Feb",
-		day: "Saturday",
-		time: "21.30 - 23.30",
-		venue: "The Silver Elephant, 56 Elephant Road",
-		city: "Atlanta",
-	},
-	{
-		id: 8,
-		date: "01 Mar",
-		day: "Thursday",
-		time: "21.30 - 23.30",
-		venue: "The Super Cat, 189 Meaow street",
-		city: "Rome",
-	},
-	{
-		id: 9,
-		date: "12 Mar",
-		day: "Sunday",
-		time: "21.30 - 23.30",
-		venue: "The Super Cat, 189 Meaow street",
-		city: "Rome",
-	},
-	{
-		id: 10,
-		date: "18 Mar",
-		day: "Saturday",
-		time: "21.30 - 23.30",
-		venue: "The Golden Eagle, 56 Golden road",
-		city: "Berlin",
-	},
-	{
-		id: 11,
-		date: "20 May",
-		day: "Friday",
-		time: "20.00 - 22.30",
-		venue: "The Silver Elephant, 56 Elephant Road",
-		city: "Atlanta",
-	},
-	{
-		id: 12,
-		date: "22 May",
-		day: "Sunday",
-		time: "21.30 - 23.30",
-		venue: "The Silver Elephant, 56 Elephant Road",
-		city: "Atlanta",
-	},
-	{
-		id: 13,
-		date: "21 Jul",
-		day: "Saturday",
-		time: "21.30 - 23.30",
-		venue: "The Electric Fox, 389 Fox Road",
-		city: "Los Angeles",
-	},
-];
+	  id: 3,
+	  phase: "Phase 3/3",
+	  title: "Elevating the Vision",
+	  items: [
+		"AI Agent 2.0: Upgrade the AI Agent with advanced features, including personalized motivation, task tracking, and analytics to measure progress.",
+		"IRL Power Moves: Host real-life events, from motivational meetups, Run sessions to business workshops, strengthening the $WORK tribe.",
+		"Reach 10 million Mcap",
+		"More to come…"
+	  ]
+	}
+  ];
+  
 
 export default function TourDates() {
 	return (
-		<ul className="list-none">
-			{tourDates.map((gig) => {
-				return (
-					<li key={gig.id} className="flex items-center justify-between py-2 border-solid border-b-2 border-white last:border-b-0 leading-tight text-xl md:py-3 md:text-2xl lg:py-5 lg:justify-center lg:text-2xl xl:text-3xl lg:flex-row">
-						<div className="flex flex-col items-center justify-between text-center text-base leading-none w-[40%] md:text-xl lg:w-6/12 lg:flex-row lg:justify-start lg:text-left lg:text-2xl">
-							<div className="flex flex-col justify-center items-center date w-[3.4rem] h-[3.4rem] leading-tight p-2 bg-fluo-green rounded-md lg:mr-12 lg:w-[5.3rem] lg:h-[5.3rem]">
-								<p className="font-bold text-center uppercase">{gig.date}</p>
-							</div>
-							<div className=" text-white font-semibold leading-tight lg:ml-[20%]">
-								<p>{gig.day}</p>
-								<p>{gig.time}</p>
-							</div>
-						</div>
-						<div className="flex flex-col mt-2.5 items-center text-center text-base justify-between w-[60%] md:text-xl lg:flex-row lg:text-left lg:w-6/12 lg:mt-0 lg:text-2xl">
-							<div className="text-white font-semibold leading-tight">
-								<p>{gig.venue}</p>
-								<p>{gig.city}</p>
-							</div>
-							<div className="ml-2.5 lg:ml-auto">
-								<ButtonPrimary customClasses="text-xs md:text-sm lg:text-base">Get Ticket</ButtonPrimary>
-							</div>
-						</div>
-					</li>
-				);
-			})}
-		</ul>
+		<div className="max-w-6xl mx-auto p-2">
+      <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+        $WORK Roadmap
+      </h2>
+      <ul className="space-y-4">
+        {roadmapPhases.map((phase) => (
+          <li key={phase.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-yellow-100 hover:border-yellow-300 transition-all duration-300">
+            <div className="bg-gradient-to-r from-yellow-400 to-amber-500 p-2">
+              <div className="flex items-center">
+                <span className="text-black font-bold text-sm">{phase.phase}:</span>
+                <span className="ml-2 text-black font-bold text-sm">{phase.title}</span>
+              </div>
+            </div>
+            <ul className="p-3 space-y-2">
+              {phase.items.map((item, index) => (
+                <li key={index} className="flex items-start space-x-2 group hover:transform hover:translate-x-2 transition-transform duration-200">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5" />
+                  <span className="text-gray-700 text-sm group-hover:text-gray-900">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
 	);
 }

@@ -12,9 +12,10 @@ export default function Home() {
 				<Intro />
 				<About />
 				<Listen />
+				<TextParallax />
 				<Shows />
 				{/* <ContactUs /> */}
-				<TextParallax />
+				
 				<PhotoGallery />
 			</main>
 		</>

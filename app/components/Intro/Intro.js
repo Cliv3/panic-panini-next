@@ -85,7 +85,7 @@ export default function Intro() {
           id="backgroundVideo"
           autoPlay={false}
           loop
-          poster="/workvid.png"
+          poster="/m.webp"
           className="object-cover w-full h-full z-10"
           playsInline
         >

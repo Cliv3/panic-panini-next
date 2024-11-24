@@ -68,8 +68,8 @@ export default function IntroTourDates() {
 					</ButtonPrimary>
 				</a>
 				<div className="flex flex-col sm:flex-row items-center justify-center w-full px-4 sm:px-3 gap-2 sm:gap-4">
-					<p className="text-white text-sm sm:text-base">
-						Contract Address: {contractAddress.slice(0, 8)}...{contractAddress.slice(-8)}
+					<p className=" bg-black p-2 text-white rounded-full  text-sm sm:text-base">
+						<span className="font-bold">Contract Address: </span> {contractAddress.slice(0, 8)}...{contractAddress.slice(-8)}
 					</p>
 					<button
 						onClick={handleCopy}

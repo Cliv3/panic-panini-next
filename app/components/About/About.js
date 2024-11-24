@@ -1,14 +1,23 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import Container from "@/app/global-components/Container/Container";
+import ButtonPrimary from "@/app/global-components/ButtonPrimary/ButtonPrimary";
 import Link from "next/link";
 
 export default function About() {
   const textRef = useRef(null);
   const isInView = useInView(textRef, { once: true });
+  const contractAddress = "FMWRBWhr49k3JtPBhYT5mGXayvXJkpsuTaodzjTRpump";
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(contractAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <section
@@ -104,6 +113,29 @@ export default function About() {
                 <path d="M32.7 0.1C36.5 0 40.3 0 44.1 0C44.3 4.1 46.1 8.2 49.2 11C52.3 13.8 56.4 15.1 60.5 15V24.9C56.6 24.8 52.7 23.9 49.2 22.2C47.7 21.6 46.3 20.8 45 19.9C45 28.3 45 36.7 45 45.1C44.9 49.2 43.5 53.3 41 56.6C37.2 61.8 30.8 64.9 24.3 64.3C19.8 64 15.4 62.1 12 59C7.3 54.9 4.6 48.5 5.1 42.1C5.4 37.1 7.7 32.3 11.5 28.8C15.7 24.9 21.7 22.8 27.6 23.3C27.6 28.4 27.6 33.4 27.6 38.5C25.2 37.8 22.4 38 20.1 39.1C18.3 39.9 16.7 41.3 15.7 43C14.3 45.3 14.1 48.2 14.9 50.7C15.9 53.8 18.9 56.3 22.2 56.6C24.6 56.9 27.1 56.1 28.9 54.5C30 53.5 30.8 52.3 31.3 50.9C31.9 49.5 31.8 48 31.8 46.5C31.8 31.1 31.8 15.6 31.8 0.2C32.1 0.2 32.4 0.1 32.7 0.1Z" />
               </svg>
             </Link>
+          </div>
+          <div className="flex flex-col items-center gap-y-4">
+            <a
+              href="https://dexscreener.com/solana/9ng9pmgs2laqjou7spuzyi21qummwcgrnmymmbej8wbz"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ButtonPrimary customClasses="flex items-center gap-x-1 text-sm my-3 mt-8 lg:text-base lg:mb-0">
+                Buy on Dex screeener
+              </ButtonPrimary>
+            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center w-full px-4 sm:px-3 gap-2 sm:gap-4">
+              <p className="text-black bg-grey font-bold text-sm sm:text-base">
+                Contract Address: {contractAddress.slice(0, 8)}...
+                {contractAddress.slice(-8)}
+              </p>
+              <button
+                onClick={handleCopy}
+                className="bg-yellow-btn-primary hover:bg-yellow-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md transition-all duration-300 text-sm sm:text-base w-24"
+              >
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
           </div>
         </div>
       </Container>

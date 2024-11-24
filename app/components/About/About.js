@@ -144,7 +144,7 @@ export default function About() {
         src="/money.png"
         width={750}
         height={533}
-        alt="Holding guitar"
+        alt="Work Logo"
       />
     </section>
   );

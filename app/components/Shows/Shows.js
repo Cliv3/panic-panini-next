@@ -53,7 +53,7 @@ export default function Shows() {
 			ref={showsContainerRef}>
 			<Container customClasses="pb-2.5 h-full">
 				<div className="flex flex-col items-center text-white pt-11">
-					<h2 className="text-2xl font-bold lg:text-4xl">Roadmap &#127928;</h2>
+					<h2 className="text-2xl font-bold lg:text-4xl">Roadmap</h2>
 				</div>
 				<div
 					className="scoller relative mt-6 h-[calc(100%-14rem)] overflow-hidden overflow-y-auto no-scrollbar"

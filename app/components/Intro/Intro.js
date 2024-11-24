@@ -54,9 +54,9 @@ export default function Intro() {
             <button
               onClick={togglePlay}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 
-								   bg-yellow-btn-primary hover:bg-blue-500 text-white
-								   rounded-full w-16 h-16 flex items-center justify-center
-								   transition-all duration-300"
+                             bg-yellow-btn-primary hover:bg-blue-500 text-white
+                             rounded-full w-16 h-16 flex items-center justify-center
+                             transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,8 +74,9 @@ export default function Intro() {
               </svg>
             </button>
             <p
-              className=" absolute top-[60%] left-1/2 transform -translate-x-1/2 text-white 
-								 text-center font-bold z-20 bg-black/30 px-4 py-2 rounded-lg"
+              className="absolute sm:top-[65%] top-[70%] left-1/2 transform -translate-x-1/2 text-white 
+                         text-center font-bold z-20 bg-black/30 px-4 py-2 rounded-lg
+                         sm:text-base text-sm"
             >
               If You Are Ready To $WORK For Your Bags, Press Play!
             </p>
@@ -91,12 +92,9 @@ export default function Intro() {
         >
           <source src="./small.webm" type="video/webm" />
           <source src="./small.mp4" type="video/mp4" />
-          {/* <p>
-            Your browser doesn&#8217;t support HTML video. Here is a
-            <a href="./video-band.mp4">link to the video</a> instead.
-          </p> */}
         </video>
       </div>
+
       {isPlaying && (
         <Container customClasses="flex flex-col justify-center items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:justify-end lg:items-end">
           <IntroTourDates />
